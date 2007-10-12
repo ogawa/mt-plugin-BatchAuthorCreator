@@ -1,0 +1,47 @@
+<mt:setvarblock name="page_title"><__trans phrase="Batch Author Creator"></mt:setvarblock>
+<$mt:setvar name="position_actions_bottom" value="1"$>
+
+<mt:include name="include/header.tmpl">
+
+<mt:if name="success_loop">
+    <mtapp:statusmsg class="success">
+        <ul>
+            <mt:loop name="success_loop">
+                <li><mt:var name="message"></li>
+            </mt:loop>
+        </ul>
+    </mtapp:statusmsg>
+</mt:if>
+
+<mt:if name="error_loop">
+    <mtapp:statusmsg class="error">
+        <ul>
+            <mt:loop name="error_loop">
+                <li><mt:var name="message"></li>
+            </mt:loop>
+        </ul>
+    </mtapp:statusmsg>
+</mt:if>
+
+<div id="create-authors-panel">
+    <form method="post" enctype="multipart/form-data" action="<mt:var name="script_url">">
+        <input type="hidden" name="__mode" value="create_authors" />
+        <input type="hidden" name="magic_token" value="<mt:var name="magic_token">" />
+        <mtapp:setting
+            id="file"
+            label="<__trans phrase="Configuration file">">
+                <input name="file" type="file" size="50" />
+        </mtapp:setting>
+        <mt:setvarblock name="action_buttons">
+            <button
+                type="submit"
+                accesskey="i"
+                title="<__trans phrase="Import (i)">"
+                class="primary-button"
+                ><__trans phrase="Import"></button>
+        </mt:setvarblock>
+        <mt:include name="include/actions_bar.tmpl" bar_position="bottom" hide_pager="1" settings_bar="1">
+    </form>
+    </mt:if>
+</div>
+<mt:include name="include/footer.tmpl">

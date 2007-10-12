@@ -1,0 +1,51 @@
+#
+# Author YAML configuration
+#
+# <user-id>:
+#   nickname(*): <user nickname>
+#   email(*): <email-address>
+#   url: <url>
+#   password(*): <password>
+#   hint(*): <password hint>
+#   preferred_language: nl|es|de|fr|ja|en-us
+#   text_format: 0|markdown|markdown_with_smartypants|textile_2|__default__
+#   tag_delim: comma|space
+#   system_permissions:
+#     is_superuser:       0|1
+#     can_create_blog:    0|1
+#     can_view_log:       0|1
+#     can_manage_plugins: 0|1
+#   create_personal_weblog: 0|1
+#
+# (*) fields are required.
+#
+
+john:
+  nickname: John Doe
+  email: john.doe@domain.com
+  password: PASSWORD
+  hint: nanashi
+  preferred_language: en-us
+  text_format: 0
+  tag_delim: comma
+  system_permissions:
+    is_superuser:       0
+    can_create_blog:    0
+    can_view_log:       1
+    can_manage_plugins: 0
+  create_personal_weblog: 1
+
+jane:
+  nickname: Jane Doe
+  email: jane.doe@domain.com
+  password: PASSWORD
+  hint: nanashi
+  preferred_language: en-us
+  text_format: 0
+  tag_delim: comma
+  system_permissions:
+    is_superuser:       0
+    can_create_blog:    0
+    can_view_log:       0
+    can_manage_plugins: 0
+  create_personal_weblog: 0
